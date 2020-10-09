@@ -1,5 +1,6 @@
 package com.example.firebasechatapp
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -14,14 +15,15 @@ class MessageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(messageData: MessageData) {
         val isPhoto = messageData.photoUrl.isNullOrBlank()
         if(isPhoto) {
-            tv_message.visibility = View.GONE
-            img_message.visibility = View.VISIBLE
-            Glide.with(itemView).load(messageData.photoUrl).into(img_message)
-        }
-        else {
             tv_message.visibility = View.VISIBLE
             img_message.visibility = View.GONE
             tv_message.text = messageData.text
+        }
+        else {
+            Log.d("Firebase", "tv_message visible")
+            tv_message.visibility = View.GONE
+            img_message.visibility = View.VISIBLE
+            Glide.with(itemView).load(messageData.photoUrl).into(img_message)
         }
         tv_name.text = messageData.name
     }

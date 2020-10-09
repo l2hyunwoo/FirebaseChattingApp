@@ -15,6 +15,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        resConfigs "ko"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,6 +47,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.5.1'
     //Firebase Realtime Database
     implementation 'com.google.firebase:firebase-database:19.5.0'
-
-
+    // Firebase UI
+    implementation 'com.firebaseui:firebase-ui-auth:6.3.0'
+    // Firebase Auth
+    implementation 'com.google.firebase:firebase-auth:19.4.0'
 }
